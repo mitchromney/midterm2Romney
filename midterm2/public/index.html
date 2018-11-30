@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="./javascripts/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+  <meta charset="utf-8">
+  <title>Romnazon.com</title>
+</head>
+
+<body>
+  <div id='app' ng-app='app' ng-controller='mainCtrl'>
+    <header>
+      <h1> Store Management Interface</h1>
+      <p> Add Product: </p>
+    <form id="newPoki" ng-submit="addPoki()">
+      Product Name: <input type="text" ng-model="Name" value=""><br> 
+      Price: <input type="text" ng-model="Price" value=""><br>
+      Image Url: <input type="url" ng-model="Url" value=""><br>
+      <input type="submit" value="Submit">
+    </form>
+    </header>
+    
+    <ul ng-if='pokemon.length' class='list center stretch'>
+      <li ng-repeat='p in pokemon' class='pokemon'>
+        <h1>{{ p.name }}</h1>
+        <p>Price: ${{ p.price }}</p>
+        <p>Ordered: {{ p.amount }}</p>
+        <img class='avatar' ng-src="{{p.avatarUrl}}" />
+      </li>
+    </ul>
+
+  </div>
+
+</body>
+
+</html>
